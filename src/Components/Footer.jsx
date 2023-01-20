@@ -28,6 +28,7 @@ const Footer = () => {
 
   const FooterLink = styled("span")(({ theme }) => ({
     fontSize: "16px",
+    marginBottom: "2px",
     color: "#7A7A7E",
     fontWeight: "300",
     cursor: "pointer",
@@ -49,14 +50,12 @@ const Footer = () => {
                 mb: 2,
               }}
             >
-              Products
+              Links
             </Typography>
 
-            <FooterLink>Listing</FooterLink>
+            <FooterLink>Terms & Conditions</FooterLink>
             <br />
-            <FooterLink>Properties</FooterLink>
-            <br />
-            <FooterLink>Agents</FooterLink>
+            <FooterLink>Privacy Policy</FooterLink>
             <br />
             <FooterLink>Blog</FooterLink>
           </Box>
@@ -70,37 +69,12 @@ const Footer = () => {
                 mb: 2,
               }}
             >
-              Resources
+              Contact Information
             </Typography>
 
-            <FooterLink>Our Homes</FooterLink>
+            <FooterLink sx={{mb:2}}>kontakt@stromprisidag.no</FooterLink>
             <br />
-            <FooterLink>Stories</FooterLink>
-            <br />
-            <FooterLink>Video</FooterLink>
-            <br />
-            <FooterLink>Free Trial</FooterLink>
-          </Box>
-
-          <Box>
-            <Typography
-              sx={{
-                fontSize: "20px",
-                color: "#1C1C1D",
-                fontWeight: "700",
-                mb: 2,
-              }}
-            >
-              Company
-            </Typography>
-
-            <FooterLink>Partnerships</FooterLink>
-            <br />
-            <FooterLink>Terms of use</FooterLink>
-            <br />
-            <FooterLink>Privacy</FooterLink>
-            <br />
-            <FooterLink>Sitemap</FooterLink>
+            <FooterLink>+47 48695361</FooterLink>
           </Box>
 
           <Box>
@@ -113,17 +87,6 @@ const Footer = () => {
               }}
             >
               Get in touch
-            </Typography>
-
-            <Typography
-              sx={{
-                fontSize: "16px",
-                color: "#7A7A7E",
-                fontWeight: "500",
-                mb: 2,
-              }}
-            >
-              You’ll find your next home, in any style you prefer.
             </Typography>
 
             <IconBox>
@@ -139,6 +102,17 @@ const Footer = () => {
                 style={{ cursor: "pointer" }}
               />
             </IconBox>
+
+            <Typography
+              sx={{
+                fontSize: "16px",
+                color: "#7A7A7E",
+                fontWeight: "500",
+                pt: 2,
+              }}
+            >
+              Copyright Stromprisidag 2023
+            </Typography>
           </Box>
         </CustomContainer>
       </CustomContainer>
