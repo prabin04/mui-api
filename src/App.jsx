@@ -5,6 +5,7 @@ import Properties from "./Components/Properties";
 import Faq from "./Components/Faq";
 import GetStarted from "./Components/GetStarted";
 import Footer from "./Components/Footer";
+import BillTracker from "./Components/BillTracker";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Guide />
       <Properties />
       <Faq />
+      <BillTracker />
       <GetStarted />
       <Footer />
     </>
