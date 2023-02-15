@@ -20,7 +20,7 @@ import {
   styled,
 } from "@mui/material";
 import { useState } from "react";
-import { LinkOffTwoTone } from "@mui/icons-material";
+import { QuestionAnswer } from "@mui/icons-material";
 
 export const Navbar = () => {
   const [mobileMenu, setMobileMenu] = useState({
@@ -46,7 +46,7 @@ export const Navbar = () => {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {["Home", "Features", "Services", "Listed", "Contact"].map(
+        {["Home", "Features", "Services", "Listed", "FAQ", "Contact"].map(
           (text, index) => (
             <ListItem key={text} disablePadding>
               <ListItemButton>
@@ -55,7 +55,8 @@ export const Navbar = () => {
                   {index === 1 && <FeaturedPlayListIcon />}
                   {index === 2 && <MiscellaneousServicesIcon />}
                   {index === 3 && <ListAltIcon />}
-                  {index === 4 && <ContactsIcon />}
+                  {index === 4 && <QuestionAnswer />}
+                  {index === 5 && <ContactsIcon />}
                 </ListItemIcon>
                 <ListItemText primary={text} />
               </ListItemButton>
