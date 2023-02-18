@@ -1,4 +1,3 @@
-import Compare from "./Components/Compare";
 import Guide from "./Components/Guide";
 import Hero from "./Components/Hero";
 import Properties from "./Components/Properties";
@@ -11,7 +10,6 @@ function App() {
   return (
     <>
       <Hero />
-      <Compare />
       <Guide />
       <Properties />
       <Faq />
