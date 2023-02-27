@@ -8,7 +8,7 @@ import CustomButton from "./CustomButton";
 import { createTheme } from '@mui/material/styles';
 
 const Hero = () => {
-  const CustomBox = styled(Box)(({ theme }) => ({
+  const BlogsBox = styled(Box)(({ theme }) => ({
     display: "flex",
     justifyContent: "center",
     gap: theme.spacing(5),
@@ -50,7 +50,7 @@ const Hero = () => {
     <Box sx={{ backgroundColor: "#E6F0FF", minHeight: "80vh" }} >
       <Container>
         <Navbar />
-        <CustomBox>
+        <BlogsBox>
           <Box sx={{ flex: "1" }}>
             <Typography
               variant="body2"
@@ -88,7 +88,7 @@ const Hero = () => {
               style={{ maxWidth: "100%", marginBottom: "2rem" }}
             />
           </Box>
-        </CustomBox>
+        </BlogsBox>
       </Container>
     </Box>
   );

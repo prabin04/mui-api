@@ -1,8 +1,11 @@
 import React from 'react'
+import Properties from '../Components/Properties'
 
 const Services = () => {
   return (
-    <div>Services</div>
+    <div>
+      <Properties />
+    </div>
   )
 }
 
