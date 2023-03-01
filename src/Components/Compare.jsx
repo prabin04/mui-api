@@ -1,7 +1,5 @@
 import { Box, Button, styled, Typography } from "@mui/material";
 import React, {useState} from "react";
-import TextField from '@mui/material/TextField';
-import CustomButton from "./CustomButton";
 import Municipalities from "./Municipalities";
 import Consumption from "./Consumption";
 import { Puff } from "react-loader-spinner";
@@ -25,20 +23,20 @@ const Compare = () => {
   };
 
 
-  const GuidesBox = styled(Box)(({ theme }) => ({
-    display: "flex",
-    justifyContent: "space-around",
-    width: "100%",
-    marginTop: theme.spacing(5),
-    marginBottom: theme.spacing(5),
-    [theme.breakpoints.down("md")]: {
-      width: "100%",
-    },
-    [theme.breakpoints.down("sm")]: {
-      marginBottom: "0",
-      flexDirection: "column",
-    },
-  }));
+  // const GuidesBox = styled(Box)(({ theme }) => ({
+  //   display: "flex",
+  //   justifyContent: "space-around",
+  //   width: "100%",
+  //   marginTop: theme.spacing(5),
+  //   marginBottom: theme.spacing(5),
+  //   [theme.breakpoints.down("md")]: {
+  //     width: "100%",
+  //   },
+  //   [theme.breakpoints.down("sm")]: {
+  //     marginBottom: "0",
+  //     flexDirection: "column",
+  //   },
+  // }));
 
   const GuideBox = styled(Box)(({ theme }) => ({
     display: "flex",

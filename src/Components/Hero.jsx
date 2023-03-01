@@ -7,7 +7,7 @@ import heroImg from "../media/hero_illustration.png";
 import CustomButton from "./CustomButton";
 import { createTheme } from '@mui/material/styles';
 
-const Hero = () => {
+const Hero = ( {data} ) => {
   const BlogsBox = styled(Box)(({ theme }) => ({
     display: "flex",
     justifyContent: "center",
@@ -45,9 +45,9 @@ const Hero = () => {
       },
     },
   });
-
+  console.log(data)
   return (
-    <Box sx={{ backgroundColor: "#E6F0FF", minHeight: "80vh" }} >
+    <Box sx={{ backgroundColor: "#E6F0FF", minHeight: "80vh", }} >
       <Container>
         <Navbar />
         <BlogsBox>
@@ -58,20 +58,24 @@ const Hero = () => {
                 fontSize: "18px",
                 color: "#687690",
                 fontWeight: "500",
-                mt: 10,
-                mb: 4,
+                mt: 4,
+                mb: 2,
               }}
             >
-              Welcome to Site
+              {data.heading}
+              {/* Welcome to Site */}
             </Typography>
             <Title variant="h1">
-              Save money on your electricity bills <TipsAndUpdatesOutlinedIcon theme={theme} color="primary" fontSize="large" />
+              {/* Save money on your electricity bills  */}
+              {data.title}
+              <TipsAndUpdatesOutlinedIcon theme={theme} color="primary" fontSize="large" />
             </Title>
             <Typography
               variant="body2"
-              sx={{ fontSize: "18px", color: "#5A6473", my: 4 }}
+              sx={{ fontSize: "18px", color: "#5A6473", my: 2 }}
             >
-              Compare plans from top providers and find the best deal for you.
+              {data.description}
+              {/* Compare plans from top providers and find the best deal for you. */}
             </Typography>
             <CustomButton
               backgroundColor="#FDA40A "
@@ -83,7 +87,7 @@ const Hero = () => {
 
           <Box sx={{ flex: "1.25" }}>
             <img
-              src={heroImg}
+              src={`${data.img}`}
               alt="heroImg"
               style={{ maxWidth: "100%", marginBottom: "2rem" }}
             />

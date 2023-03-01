@@ -1,42 +1,52 @@
-import { Box, styled, Typography } from "@mui/material";
+import { makeStyles } from "@material-ui/core/styles";
 import moment from "moment/moment";
 import React from "react";
+import { Card, CardContent, CardMedia, CardActionArea, Typography } from "@material-ui/core";
 
-const BlogsCard = ({ data }) => {
-  const CustomBox = styled(Box)(({ theme }) => ({
-    borderTopLeftRadius: "10px",
-    borderTopRightRadius: "10px",
-    maxWidth: "250px",
-    gap: 5,
-    backgroundColor: "lightgray",
-    margin: theme.spacing(0, 2, 0, 2),
-    [theme.breakpoints.down("md")]: {
-      margin: theme.spacing(2, 0, 2, 0),
-    },
-  }));
-  const InfoBox = styled(Box)(() => ({
+const useStyles = makeStyles({
+  root: {
     display: "flex",
     flexDirection: "column",
-    alignItems: "center",
-  }));
-  const ImgContainer = styled(Box)(() => ({
-    width: "100%",
-  }));
+    justifyContent: "space-between",
+    width: 350,
+    height: "100%",
+    paddingBottom: "10px",
+    boxShadow: "gray 2px 2px 2px 2px",
+  },
+  media: {
+    height: "10rem"
+  },
+  items: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "10px",
+    height: "20rem"
+  }
+});
+
+const BlogsCard = ({ data }) => {
+  const classes = useStyles()
+  
   let date = moment(data.publishedAt).utc().format("DD-MM-YYYY");
+
+  
   return (
-    <CustomBox>
-      <ImgContainer>
-        <img src={data.urlToImage} alt="heroImg" style={{ maxWidth: "100%" }} />
-      </ImgContainer>
-      <Box sx={{ padding: "1rem" }}>
-        <Typography variant="body2" sx={{ fontWeight: "700" }}>
-          {data.title}
-        </Typography>
-        <Typography variant="body2" sx={{ my: 1 }}>
-          {date}
-        </Typography>
-      </Box>
-    </CustomBox>
+    <Card className={classes.root}>
+      <CardActionArea>
+        <CardMedia className={classes.media} image={data.urlToImage}/>
+        <CardContent className={classes.items}>
+          <Typography variant="body1" component="p">
+            {date}
+          </Typography>
+          <Typography variant="h6" component="h2">
+            {data.title}
+          </Typography>
+          <Typography variant="body1" component="p">
+            {data.description}
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+    </Card>
   );
 };
 

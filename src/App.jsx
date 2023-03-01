@@ -7,11 +7,12 @@ import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import Listed from "./pages/Listed";
 import Services from "./pages/Services";
+import { useState } from "react";
 
 function App() {
   return (
     <>
-      <Hero />
+      {/* <Hero /> */}
       <Routes>
         <Route path="/" element={<Home />}/>
         <Route path="/features" element={<Features />}/>
