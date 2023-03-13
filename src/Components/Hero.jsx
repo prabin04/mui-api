@@ -1,14 +1,13 @@
-import { Box, Button, styled, Typography } from "@mui/material";
+import { Box, styled, Typography } from "@mui/material";
 import { Container } from "@mui/system";
 import React from "react";
 import Navbar from "./Navbar";
 import TipsAndUpdatesOutlinedIcon from '@mui/icons-material/TipsAndUpdatesOutlined';
-import heroImg from "../media/hero_illustration.png";
 import CustomButton from "./CustomButton";
 import { createTheme } from '@mui/material/styles';
 
-const Hero = () => {
-  const CustomBox = styled(Box)(({ theme }) => ({
+const Hero = ( {data} ) => {
+  const BlogsBox = styled(Box)(({ theme }) => ({
     display: "flex",
     justifyContent: "center",
     gap: theme.spacing(5),
@@ -45,12 +44,12 @@ const Hero = () => {
       },
     },
   });
-
+  console.log(data)
   return (
-    <Box sx={{ backgroundColor: "#E6F0FF", minHeight: "80vh" }} >
+    <Box sx={{ backgroundColor: "#E6F0FF", minHeight: "80vh", }} >
       <Container>
         <Navbar />
-        <CustomBox>
+        <BlogsBox>
           <Box sx={{ flex: "1" }}>
             <Typography
               variant="body2"
@@ -58,20 +57,24 @@ const Hero = () => {
                 fontSize: "18px",
                 color: "#687690",
                 fontWeight: "500",
-                mt: 10,
-                mb: 4,
+                mt: 4,
+                mb: 2,
               }}
             >
-              Welcome to Site
+              {data.heading}
+              {/* Welcome to Site */}
             </Typography>
             <Title variant="h1">
-              Save money on your electricity bills <TipsAndUpdatesOutlinedIcon theme={theme} color="primary" fontSize="large" />
+              {/* Save money on your electricity bills  */}
+              {data.title}
+              <TipsAndUpdatesOutlinedIcon theme={theme} color="primary" fontSize="large" />
             </Title>
             <Typography
               variant="body2"
-              sx={{ fontSize: "18px", color: "#5A6473", my: 4 }}
+              sx={{ fontSize: "18px", color: "#5A6473", my: 2 }}
             >
-              Compare plans from top providers and find the best deal for you.
+              {data.description}
+              {/* Compare plans from top providers and find the best deal for you. */}
             </Typography>
             <CustomButton
               backgroundColor="#FDA40A "
@@ -83,12 +86,12 @@ const Hero = () => {
 
           <Box sx={{ flex: "1.25" }}>
             <img
-              src={heroImg}
+              src={`${data.img}`}
               alt="heroImg"
               style={{ maxWidth: "100%", marginBottom: "2rem" }}
             />
           </Box>
-        </CustomBox>
+        </BlogsBox>
       </Container>
     </Box>
   );

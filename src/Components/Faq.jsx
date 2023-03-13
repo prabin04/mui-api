@@ -1,7 +1,6 @@
-import { Accordion, AccordionSummary, styled, Typography } from "@mui/material";
+import { styled, Typography } from "@mui/material";
 import { Box, Container } from "@mui/system";
-import React, {useState} from "react";
-import houseCard from "../media/houseCard.png";
+import React from "react";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MuiAccordion from '@mui/material/Accordion';
 import MuiAccordionSummary from '@mui/material/AccordionSummary';

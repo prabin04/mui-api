@@ -20,7 +20,8 @@ import {
   styled,
 } from "@mui/material";
 import { useState } from "react";
-import { LinkOffTwoTone } from "@mui/icons-material";
+import { QuestionAnswer } from "@mui/icons-material";
+import { Link } from "react-router-dom";
 
 export const Navbar = () => {
   const [mobileMenu, setMobileMenu] = useState({
@@ -46,22 +47,34 @@ export const Navbar = () => {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {["Home", "Features", "Services", "Listed", "Contact"].map(
-          (text, index) => (
-            <ListItem key={text} disablePadding>
+        {[
+          { text: "Home", icon: <HomeIcon />, path: "/" },
+          {
+            text: "Compare Plans",
+            icon: <FeaturedPlayListIcon />,
+            path: "/features",
+          },
+          {
+            text: "Energy Usage",
+            icon: <MiscellaneousServicesIcon />,
+            path: "/services",
+          },
+          { text: "Blogs", icon: <ListAltIcon />, path: "/listed" },
+          { text: "FAQ", icon: <QuestionAnswer />, path: "/faq" },
+          { text: "Contact", icon: <ContactsIcon />, path: "/contact" },
+        ].map((item) => (
+          <ListItem key={item.text} disablePadding>
+            <Link
+              to={item.path}
+              style={{ textDecoration: "none", color: "black" }}
+            >
               <ListItemButton>
-                <ListItemIcon>
-                  {index === 0 && <HomeIcon />}
-                  {index === 1 && <FeaturedPlayListIcon />}
-                  {index === 2 && <MiscellaneousServicesIcon />}
-                  {index === 3 && <ListAltIcon />}
-                  {index === 4 && <ContactsIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} />
+                <ListItemIcon>{item.icon}</ListItemIcon>
+                <ListItemText primary={item.text} />
               </ListItemButton>
-            </ListItem>
-          )
-        )}
+            </Link>
+          </ListItem>
+        ))}
       </List>
     </Box>
   );
@@ -69,10 +82,11 @@ export const Navbar = () => {
   const NavLink = styled(Typography)(({ theme }) => ({
     fontSize: "14px",
     color: "#4F5361",
+    textDecoration: "",
     fontWeight: "bold",
     cursor: "pointer",
     "&:hover": {
-      color: "#fff",
+      color: "black",
     },
   }));
 
@@ -135,12 +149,24 @@ export const Navbar = () => {
         </Box>
 
         <NavbarLinksBox>
-          <NavLink variant="body2">Home</NavLink>
-          <NavLink variant="body2">Compare Plans</NavLink>
-          <NavLink variant="body2">Energy Usage</NavLink>
-          <NavLink variant="body2">FAQ</NavLink>
-          <NavLink variant="body2">Blogs</NavLink>
-          <NavLink variant="body2">Contact</NavLink>
+          <Link to={"/"}>
+            <NavLink>Home</NavLink>
+          </Link>
+          <Link to={"/features"}>
+            <NavLink variant="body2">Compare Plans</NavLink>
+          </Link>
+          <Link to={"/services"}>
+            <NavLink variant="body2">Energy Usage</NavLink>
+          </Link>
+          <Link to={"/faq"}>
+            <NavLink variant="body2">FAQ</NavLink>
+          </Link>
+          <Link to={"/listed"}>
+            <NavLink variant="body2">Blogs</NavLink>
+          </Link>
+          <Link to={"/contact"}>
+            <NavLink variant="body2">Contact</NavLink>
+          </Link>
         </NavbarLinksBox>
       </Box>
 

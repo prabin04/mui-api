@@ -1,22 +1,24 @@
-import Compare from "./Components/Compare";
-import Guide from "./Components/Guide";
-import Hero from "./Components/Hero";
-import Properties from "./Components/Properties";
-import Faq from "./Components/Faq";
-import GetStarted from "./Components/GetStarted";
 import Footer from "./Components/Footer";
-import BillTracker from "./Components/BillTracker";
+import { Route, Routes } from "react-router-dom";
+import Features from "./pages/Features";
+import FAQ from "./pages/FAQ";
+import Contact from "./pages/Contact";
+import Home from "./pages/Home";
+import Listed from "./pages/Listed";
+import Services from "./pages/Services";
 
 function App() {
   return (
     <>
-      <Hero />
-      <Compare />
-      <Guide />
-      <Properties />
-      <Faq />
-      <BillTracker />
-      <GetStarted />
+      {/* <Hero /> */}
+      <Routes>
+        <Route path="/" element={<Home />}/>
+        <Route path="/features" element={<Features />}/>
+        <Route path="/services" element={<Services />}/>
+        <Route path="/listed" element={<Listed />}/>
+        <Route path="/faq" element={<FAQ />}/>
+        <Route path="/contact" element={<Contact />}/>
+      </Routes>
       <Footer />
     </>
   );
