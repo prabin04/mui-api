@@ -5,6 +5,7 @@ import React from "react";
 import fbIcon from "../media/fbicon.png";
 import twitterIcon from "../media/twittericon.png";
 import linkedinIcon from "../media/linkedinicon.png";
+const today = new Date();
 
 const Footer = () => {
   const CustomContainer = styled(Container)(({ theme }) => ({
@@ -111,7 +112,7 @@ const Footer = () => {
                 pt: 2,
               }}
             >
-              Copyright Stromprisidag 2023
+              Copyright &copy; Stromprisidag {today.getFullYear()}
             </Typography>
           </Box>
         </CustomContainer>
