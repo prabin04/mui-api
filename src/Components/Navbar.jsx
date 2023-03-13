@@ -145,7 +145,9 @@ export const Navbar = () => {
           >
             {list("left")}
           </Drawer>
-          <NavbarLogo src={logoImg} alt="logo" />
+          <Link to={"/"}>
+            <NavbarLogo src={logoImg} alt="logo" />
+          </Link>
         </Box>
 
         <NavbarLinksBox>
