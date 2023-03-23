@@ -8,6 +8,7 @@ const useStyles = makeStyles((theme) => ({
     listItem: {
       "&:hover": {
         backgroundColor: theme.palette.action.hover,
+        textDecoration: 'underline',
       },
       cursor: "pointer",
     },

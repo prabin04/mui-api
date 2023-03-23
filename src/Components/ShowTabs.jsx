@@ -8,7 +8,6 @@ import AutofpsSelectIcon from '@mui/icons-material/AutofpsSelect';
 import ElectricBoltIcon from '@mui/icons-material/ElectricBolt';
 import FlashAutoIcon from '@mui/icons-material/FlashAuto';
 import { Paper, List, ListItem, ListItemText } from '@mui/material';
-import FastPrisTable from './FastPrisTable';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -82,7 +81,7 @@ export default function ShowTabs() {
         Bruk listen for å finne en avtale med lavt påslag og lang prisgaranti.
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <FastPrisTable />
+        Item Two
       </TabPanel>
       <TabPanel value={value} index={2}>
         Item Three
