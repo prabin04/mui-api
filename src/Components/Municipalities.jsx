@@ -1,13 +1,16 @@
 import * as React from 'react';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
+import { eleData } from '../data';
 
 export default function Municipalities() {
+  const companyList = eleData.map((company) => company.companyName)
+  
   return (
     <Autocomplete
       disablePortal
       id="combo-box-demo"
-      options={top100Films}
+      options={companyList}
       sx={{ width: 300 }}
       renderInput={(params) => <TextField {...params} label="Hvilken kommune bor du i?
       " />}

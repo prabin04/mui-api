@@ -8,6 +8,7 @@ import heroImg from "../media/hero_illustration.png";
 
 
 const Home = () => {
+
   const heroData = {
     img: `${heroImg}`,
     heading: "Welcome to Site",

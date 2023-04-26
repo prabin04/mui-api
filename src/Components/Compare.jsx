@@ -4,8 +4,10 @@ import Municipalities from "./Municipalities";
 import Consumption from "./Consumption";
 import { Puff } from "react-loader-spinner";
 import ShowTabs from "./ShowTabs";
+import { eleData } from "../data";
 
 const Compare = () => {
+  console.log(eleData)
   const CustomBox = styled(Box)(({ theme }) => ({
     width: "30%",
     [theme.breakpoints.down("md")]: {
