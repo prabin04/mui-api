@@ -4,8 +4,10 @@ import Municipalities from "./Municipalities";
 import Consumption from "./Consumption";
 import { Puff } from "react-loader-spinner";
 import ShowTabs from "./ShowTabs";
+import { eleData } from "../data";
 
 const Compare = () => {
+  console.log(eleData)
   const CustomBox = styled(Box)(({ theme }) => ({
     width: "30%",
     [theme.breakpoints.down("md")]: {
@@ -21,22 +23,6 @@ const Compare = () => {
       setShowSpinner(false);
     }, 2000);
   };
-
-
-  // const GuidesBox = styled(Box)(({ theme }) => ({
-  //   display: "flex",
-  //   justifyContent: "space-around",
-  //   width: "100%",
-  //   marginTop: theme.spacing(5),
-  //   marginBottom: theme.spacing(5),
-  //   [theme.breakpoints.down("md")]: {
-  //     width: "100%",
-  //   },
-  //   [theme.breakpoints.down("sm")]: {
-  //     marginBottom: "0",
-  //     flexDirection: "column",
-  //   },
-  // }));
 
   const GuideBox = styled(Box)(({ theme }) => ({
     display: "flex",

@@ -1,13 +1,30 @@
 import * as React from 'react';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
+import { eleData } from '../data';
 
 export default function Municipalities() {
+  const companyList = eleData.flatMap((company) =>
+    company.products.flatMap((product) =>
+      product.productArea.map((area) => {
+        if (area.region) {
+          return area.region;
+        } else if (area.municipality) {
+          return area.municipality;
+        }
+        return null;
+      })
+    )
+  );
+
+  const uniqueCompanyList = Array.from(new Set(companyList.flat())).filter(
+    (value) => value
+  );
   return (
     <Autocomplete
       disablePortal
       id="combo-box-demo"
-      options={top100Films}
+      options={uniqueCompanyList}
       sx={{ width: 300 }}
       renderInput={(params) => <TextField {...params} label="Hvilken kommune bor du i?
       " />}
